@@ -1,1 +1,72 @@
+ #Q1
+def Count_Digits(n) :
+  if n < 10 :
+    return 1
+  else :
+    return 1 + Count_Digits(n // 10)
+    
+  #Q2
+
+def find_max(lst):
+      if not lst :
+        return 0
+      else:
+        maxValue = find_max(lst[1:]) 
+        if maxValue > lst[0] :
+          return maxValue
+        else :
+          return lst[0]
+
+  #Q3
+def count_tags(html_code, tag):
+  startTag = "<" + tag + ">"
+  index = html_code.find(startTag)
+  if index == -1 :
+    return 0
+  else :
+    return 1 + count_tags(html_code[index+1:], tag)
+  
+
+def displayMenu() :
+    print("1. Count Digits")
+    print("2. Find Max")
+    print("3.1 Count Tags")
+    print("3.2 Count Normalized Columns")
+    print("4. Exit")
+
+    choice = int(input("Enter your choice: "))
+    while choice <= 4 :
+     if choice == 1:
+        number = int(input("Enter an integer : "))
+        print(Count_Digits(number))
+  
+     elif choice == 2 :
+        listofintegers = []
+        condition = True
+        enteredNumber = -1
+        while condition:
+              enteredNumber = input('Please enter a positive number: ')
+              if enteredNumber.isnumeric() is False or int(enteredNumber) < 0:
+                  break
+              else :
+                  listofintegers.append(int(enteredNumber))
+                  print(listofintegers)
+                  print(find_max(listofintegers))  
+     elif choice == 3:
+        html_cod = input("Please input your HTML code: ")
+        tag_counts =input("Please input the tags you want to count: ")
+        result = count_tags(html_cod, tag_counts)
+        print (f"occurences of {tag_counts}  : {result}")
+     elif choice == 4 :
+        print("Thank you for using the program. Goodbye!")
+        break
+     else :
+        print("Invalid choice. Please try again.")
+displayMenu()
+
+   
+  
+
+
+
 
