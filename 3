@@ -1,0 +1,117 @@
+student_data = [
+{
+"ID": 1,
+"Name": "Alice",
+"Age": 20,
+"Major": "Engineering",
+"GPA": 3.7
+},
+{
+"ID": 2,
+"Name": "Bob",
+"Age": 21,
+"Major": "Engineering",
+"GPA": 3.9
+},
+]
+
+#Q1
+def get_studentID(student_data,student_id):
+  for student in student_data:
+    if student_id == student["ID"]:
+      return student
+  return None  
+  
+#Q2  
+def getallstudents(student_data):
+  return student_data
+  
+#Q6
+def removestudent(data,student_id):
+  for student in student_data:
+    if student_id == student["ID"]:
+      student_data.remove(student)
+      print(data)
+  return None 
+  
+#Q3
+def get_students_by_major(data, major) :
+   for student in (data) :
+      if student["Major"] == major :
+        return student
+   return None
+  
+#Q4      
+def add_student(data, name, age, major, gpa):
+  new_student = {
+    "ID": len(data) + 1,
+    "Name": name,
+    "Age": age,
+    "Major": major,
+    "GPA": gpa
+  }
+  student_data.append(new_student)
+  return student_data
+  
+#Q7
+def calculate_average_gpa(data):
+  total_gpa = sum(student["GPA"] for student in data)
+  return total_gpa / len(data)
+  
+
+
+
+def displayMenu() :
+  print("1.Get Student by ID ")
+  print("2. Get All Students ")
+  print("3. Get Students by Major ")
+  print("4. Add Student ")
+  print("5. Find Common Majors ")
+  print("6. Delete Student ")
+  print("7. Calculate Average GPA ")
+  print("8. Get Top Performers ")
+  print("9. Exit")
+  print("- - - - - - - - - - - - - - -")
+
+
+
+
+  choice = int(input("enter a choice :"))
+
+  if choice == 1:
+    studentid = int(input("Enter student id: "))
+    print(get_studentID(student_data, studentid))
+  
+  elif choice == 2 :
+    print(getallstudents(student_data))
+  
+  elif choice == 3 :
+    major = input("enter your major :")
+    print(get_students_by_major(student_data, major))
+  
+ 
+  elif choice == 4:
+    name = input("Enter Name: ")
+    age = int(input("Enter Age: "))
+    major = input("Enter Major: ")
+    gpa = float(input("Enter GPA: "))
+    print(add_student(student_data, name, age, major, gpa))
+
+  
+  elif choice == 6 :
+    studentid = int(input("Enter student id: "))
+    print(student_data)
+    print(removestudent(student_data,studentid))  
+
+  elif choice == 7 :
+    print(calculate_average_gpa(student_data))
+
+  elif choice == 8 :
+    print("top performers")
+
+  elif choice == 9 :
+    print("Thank you for using the program. Goodbye!")
+     
+  else :
+    print("Invalid choice. Please try again.")
+displayMenu()
