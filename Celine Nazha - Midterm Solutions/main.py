@@ -16,6 +16,12 @@ def checkIndex(statement):
   else:
     return checkIndex(statement)
 
+def checkUrl(statement):
+  url = input(statement)
+  if validators.url(url):
+    return url
+  else:
+    return checkUrl(statement)
 
 def openTab():
   title = input('Enter the tab title : ')
