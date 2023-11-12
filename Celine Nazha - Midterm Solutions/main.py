@@ -3,6 +3,7 @@ import requests
 import validators
 
 Tabs = []
+#this function validate the choice if it is valid or not
 def validateChoice(choice):
   if choice.isnumeric() and (0 < int(choice) < 10):
     activateChoice(int(choice))
