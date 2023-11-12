@@ -77,7 +77,7 @@ def displayAllTabs():
     else:
       print('There is no tabs to display!')
       main()
-
+#this function prompts the user to enter an index of a tab to input a title and url of a nested tab at that index
 def openNestedTabs():
     index = checkIndex('Enter the index of the tab to open nested tabs: ')
     title = input('Enter the tab title : ')
