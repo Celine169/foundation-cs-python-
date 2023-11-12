@@ -41,7 +41,7 @@ def openTab():
   Tabs.append({'title': title, 'url': url, 'nestedTabs': []})
   print(f"Tab '{title}' with URL '{url}' created successfully.")
   main()
-
+#this function prompts the user to enter the index of the tab to closes
 def closeTab():
   if (len(Tabs) > 0):
     index = checkIndex('Enter the index of the tab to close: ')
