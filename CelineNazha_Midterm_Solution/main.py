@@ -6,7 +6,57 @@ def validateChoice(choice):
     print('Please enter a valid choice ')
     main()
     validateChoice(input())
-    def main():
+
+def openTab():
+ print('the tab opened')
+
+def closeTab():
+  print('the tab closed')
+
+def switchTab():
+  print('the tab switched')
+
+def displayAllTabs():
+  print('the tabs displayed')
+
+def openNestedTabs():
+  print('the nested tabs opened')
+
+def clearAllTabs():
+  print('all tabs cleared')
+
+def saveTabs():
+  print('the tabs saved')
+
+def importTabs():
+  print('the tabs imported')
+
+def exit():
+  print('the program exited')
+
+def activateChoice(choice):
+  if choice == 1:
+    openTab()
+  elif choice == 2:
+    closeTab()
+  elif choice == 3:
+    switchTab()
+  elif choice == 4:
+    displayAllTabs()
+  elif choice == 5:
+    openNestedTabs()
+  elif choice == 6:
+    clearAllTabs()
+  elif choice == 7:
+    saveTabs()
+  elif choice == 8:
+    importTabs()
+  elif choice == 9:
+    print("Exiting program,Goodbye! ")
+    exit()
+
+
+def main():
   print("\n")
   print('1. Open Tab')
   print('2. Close Tab')
@@ -19,8 +69,9 @@ def validateChoice(choice):
   print('9. Exit')
   print("enter a choice :")
   validateChoice(input())
-  
+
 
 
 print('Hello, welcome to the program!')
 main()
+
