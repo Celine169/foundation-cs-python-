@@ -18,7 +18,7 @@ def getValidPath(statement):
         return path
       else:
         return getValidPath(statement)
-
+#this function checks if the index entered by user is less than the len(tabs) and if it is numeric
 def checkIndex(statement):
   index = input(statement)
   if not index:
