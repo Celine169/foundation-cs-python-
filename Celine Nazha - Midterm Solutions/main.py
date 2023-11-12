@@ -25,7 +25,15 @@ def openTab():
   main()
 
 def closeTab():
- print('the tab closed')
+  if (len(Tabs) > 0):
+    index = checkIndex('Enter the index of the tab to close: ')
+    del Tabs[index]
+    print(f"Tab '{index}' closed successfully.")
+    main()
+  else:
+    print('There is no tab to close !')
+    main()
+
 
 def switchTab ():
   print('the tab switched')
