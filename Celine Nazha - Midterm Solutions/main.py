@@ -106,7 +106,7 @@ def importTabs():
     Tabs.extend(json.load(file))
   print('The tabs are imported successfully!')
   main()
- 
+
 def exit():
   print('the program exited')
 
@@ -145,7 +145,7 @@ def main():
   print('9. Exit')
   print("enter a choice :")
   validateChoice(input())
-  
+
 
 
 print('Hello, welcome to the program!')
