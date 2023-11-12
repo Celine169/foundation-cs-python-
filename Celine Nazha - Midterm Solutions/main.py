@@ -1,3 +1,7 @@
+import json
+import requests
+import validators
+
 Tabs = []
 def validateChoice(choice):
   if choice.isnumeric() and (0 < int(choice) < 10):
