@@ -34,7 +34,7 @@ def checkUrl(statement):
     return url
   else:
     return checkUrl(statement)
-
+#this function prompts the user for the title and the url of the tab he wants to open
 def openTab():
   title = input('Enter the tab title : ')
   url = checkUrl('Enter the url tab  : ')
