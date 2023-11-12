@@ -49,7 +49,16 @@ def switchTab():
     main()
 
 def displayAllTabs():
-  print('all tabs displayed')
+    if (len(Tabs) > 0):
+      for index, tab in enumerate(Tabs):
+        print('Tab ', index, ' : ', tab['title'])
+        if (len(tab['nestedTabs']) > 0):
+          for nestedTab in tab['nestedTabs']:
+            print('**', nestedTab['title'])
+      main()
+    else:
+      print('There is no tabs to display!')
+      main()
 
 def openNestedTabs():
   print('nested tabs opened')
