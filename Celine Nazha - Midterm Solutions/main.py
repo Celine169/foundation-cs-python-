@@ -13,7 +13,6 @@ def activateChoice(choice):
     clearAllTabs()
   elif choice == 7:
     saveTabs()
-    
   elif choice == 8:
     importTabs()
   elif choice == 9:
