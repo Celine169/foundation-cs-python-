@@ -14,6 +14,13 @@ def getValidPath(statement):
       else:
         return getValidPath(statement)
 
+def checkFilePathIfExists(statement):
+  path = input(statement)
+  if os.path.exists(path):
+    return path
+  else:
+    return checkFilePathIfExists(statement)
+
 def checkIndex(statement):
   index = input(statement)
   if not index:
