@@ -3,6 +3,7 @@ import requests
 import validators
 
 Tabs = []
+
 #this function validate the choice if it is valid or not
 def validateChoice(choice):
   if choice.isnumeric() and (0 < int(choice) < 10):
@@ -11,6 +12,7 @@ def validateChoice(choice):
     print('Please enter a valid choice ')
     main()
     validateChoice(input())
+
 #thisfunction checks if the file path is valid or not
 def getValidPath(statement):
       path = input(statement)
@@ -18,6 +20,7 @@ def getValidPath(statement):
         return path
       else:
         return getValidPath(statement)
+
 #this function checks if the index entered by user is less than the len(tabs) and if it is numeric
 def checkIndex(statement):
   index = input(statement)
@@ -27,6 +30,7 @@ def checkIndex(statement):
     return int(index)
   else:
     return checkIndex(statement)
+
 #this function checks the validation of an url entered by user
 def checkUrl(statement):
   url = input(statement)
@@ -34,6 +38,7 @@ def checkUrl(statement):
     return url
   else:
     return checkUrl(statement)
+
 #this function prompts the user for the title and the url of the tab he wants to open
 def openTab():
   title = input('Enter the tab title : ')
@@ -41,6 +46,7 @@ def openTab():
   Tabs.append({'title': title, 'url': url, 'nestedTabs': []})
   print(f"Tab '{title}' with URL '{url}' created successfully.")
   main()
+
 #this function prompts the user to enter the index of the tab to closes
 def closeTab():
   if (len(Tabs) > 0):
@@ -65,6 +71,7 @@ def switchTab():
   else:
     print('There is no tab ')
     main()
+
 # this function prompts the user to enter the index of a tab to display its title and the title otss nested tab if exist
 def displayAllTabs():
     if (len(Tabs) > 0):
@@ -77,6 +84,7 @@ def displayAllTabs():
     else:
       print('There is no tabs to display!')
       main()
+
 #this function prompts the user to enter an index of a tab to input a title and url of a nested tab at that index
 def openNestedTabs():
     index = checkIndex('Enter the index of the tab to open nested tabs: ')
@@ -88,18 +96,21 @@ def openNestedTabs():
     )
     main()
 
+# this function clears all the tabs
 def clearAllTabs():
   Tabs.clear()
   print('All the tabs are cleared!')
   main()
 
+# this function save the tabs
 def saveTabs():
   filePath = getValidPath('Enter the file path to save the tabs: ')
   with open(filePath, 'w') as file:
     json.dump(Tabs, file)
   print('The tabs are saved successfully!')
   main()
-
+  
+#this function import the tabs
 def importTabs():
   filePath = input('Enter the file path to import the tabs: ')
   with open(filePath, 'r') as file:
