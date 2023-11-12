@@ -83,7 +83,12 @@ def saveTabs():
   main()
 
 def importTabs():
-  print('the tabs imported ')
+  filePath = input('Enter the file path to import the tabs: ')
+  with open(filePath, 'r') as file:
+    Tabs.clear()
+    Tabs.extend(json.load(file))
+  print('The tabs are imported successfully!')
+  main()
  
 def exit():
   print('the program exited')
