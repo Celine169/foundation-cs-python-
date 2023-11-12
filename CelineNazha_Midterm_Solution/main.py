@@ -7,7 +7,6 @@ def validateChoice(choice):
     main()
     validateChoice(input())
 
-
 def checkIndex(statement):
   index = input(statement)
   if not index:
@@ -16,37 +15,7 @@ def checkIndex(statement):
     return int(index)
   else:
     return checkIndex(statement)
-    
-def openTab():
-  title = input('Enter the tab title : ')
-  url = input('Enter the url tab  : ')
-  Tabs.append({'title': title, 'url': url, 'nestedTabs': []})
-  print(f"Tab '{title}' with URL '{url}' created successfully.")
-  main()
 
-def closeTab():
-  print('the tab closed')
-
-def switchTab():
-  print('the tab switched')
-
-def displayAllTabs():
-  print('the tabs displayed')
-
-def openNestedTabs():
-  print('the nested tabs opened')
-
-def clearAllTabs():
-  print('all tabs cleared')
-
-def saveTabs():
-  print('the tabs saved')
-
-def importTabs():
-  print('the tabs imported')
-
-def exit():
-  print('the program exited')
 
 def activateChoice(choice):
   if choice == 1:
@@ -70,6 +39,45 @@ def activateChoice(choice):
     exit()
 
 
+def openTab():
+  title = input('Enter the tab title : ')
+  url = input('Enter the url tab  : ')
+  Tabs.append({'title': title, 'url': url, 'nestedTabs': []})
+  print(f"Tab '{title}' with URL '{url}' created successfully.")
+  main()
+
+
+def closeTab():
+  if (len(Tabs) > 0):
+    index = checkIndex('Enter the index of the tab to close: ')
+    del Tabs[index]
+    print(f"Tab '{index}' closed successfully.")
+    main()
+  else:
+    print('There is no tab to close !')
+    main()
+
+def switchTab():
+  print('the tab switched')
+
+def displayAllTabs():
+  print('the tabs displayed')
+
+def openNestedTabs():
+  print('the nested tabs opened')
+
+def clearAllTabs():
+  print('all tabs cleared')
+
+def saveTabs():
+  print('the tabs saved')
+
+def importTabs():
+  print('the tabs imported')
+
+def exit():
+  print('the program exited')
+
 def main():
   print("\n")
   print('1. Open Tab')
@@ -88,4 +96,3 @@ def main():
 
 print('Hello, welcome to the program!')
 main()
-
