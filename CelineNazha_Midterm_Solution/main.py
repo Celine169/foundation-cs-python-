@@ -1,4 +1,12 @@
-def main():
+Tabs = []
+def validateChoice(choice):
+  if choice.isnumeric() and (0 < int(choice) < 10):
+    activateChoice(int(choice))
+  else:
+    print('Please enter a valid choice ')
+    main()
+    validateChoice(input())
+    def main():
   print("\n")
   print('1. Open Tab')
   print('2. Close Tab')
