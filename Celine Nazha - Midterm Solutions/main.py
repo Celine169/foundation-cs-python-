@@ -35,8 +35,18 @@ def closeTab():
     main()
 
 
-def switchTab ():
-  print('the tab switched')
+def switchTab():
+  if (len(Tabs) > 0):
+    index = checkIndex(
+        'Enter the index of the tab you want to display: ')
+    print('Title : ', Tabs[index]['title'])
+    print('URL : ', Tabs[index]['url'])
+    print('URL HTML Content:')
+    print(requests.get(Tabs[index]['url']).text)
+    main()
+  else:
+    print('There is no tab ')
+    main()
 
 def displayAllTabs():
   print('all tabs displayed')
