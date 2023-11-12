@@ -61,8 +61,15 @@ def displayAllTabs():
       main()
 
 def openNestedTabs():
-  print('nested tabs opened')
-
+    index = checkIndex('Enter the index of the tab to open nested tabs: ')
+    title = input('Enter the tab title : ')
+    url = input('Enter the url tab : ')
+    Tabs[index]['nestedTabs'].append({'title': title, 'url': url})
+    print(
+        f"Tab '{title}' with URL '{url}' created under the parent tab with index  '{index}' successfully."
+    )
+    main()
+    
 def clearAllTabs():
   print('all tabs cleared')
 
