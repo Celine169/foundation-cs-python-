@@ -27,7 +27,7 @@ def checkIndex(statement):
     return int(index)
   else:
     return checkIndex(statement)
-
+#this function checks the validation of an url entered by user
 def checkUrl(statement):
   url = input(statement)
   if validators.url(url):
