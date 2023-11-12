@@ -52,7 +52,7 @@ def closeTab():
     print('There is no tab to close !')
     main()
 
-
+#this function prompts the user to enter an index of a tab to display its html content
 def switchTab():
   if (len(Tabs) > 0):
     index = checkIndex(
