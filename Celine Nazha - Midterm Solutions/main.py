@@ -25,7 +25,7 @@ def checkUrl(statement):
 
 def openTab():
   title = input('Enter the tab title : ')
-  url = input('Enter the url tab  : ')
+  url = checkUrl('Enter the url tab  : ')
   Tabs.append({'title': title, 'url': url, 'nestedTabs': []})
   print(f"Tab '{title}' with URL '{url}' created successfully.")
   main()
@@ -69,7 +69,7 @@ def displayAllTabs():
 def openNestedTabs():
     index = checkIndex('Enter the index of the tab to open nested tabs: ')
     title = input('Enter the tab title : ')
-    url = input('Enter the url tab : ')
+    url = checkUrl('Enter the url tab : ')
     Tabs[index]['nestedTabs'].append({'title': title, 'url': url})
     print(
         f"Tab '{title}' with URL '{url}' created under the parent tab with index  '{index}' successfully."
