@@ -8,7 +8,11 @@ def validateChoice(choice):
     validateChoice(input())
 
 def openTab():
- print('the tab opened')
+  title = input('Enter the tab title : ')
+  url = input('Enter the url tab  : ')
+  Tabs.append({'title': title, 'url': url, 'nestedTabs': []})
+  print(f"Tab '{title}' with URL '{url}' created successfully.")
+  main()
 
 def closeTab():
   print('the tab closed')
