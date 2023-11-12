@@ -18,13 +18,6 @@ def getValidPath(statement):
       else:
         return getValidPath(statement)
 
-def checkFilePathIfExists(statement):
-  path = input(statement)
-  if os.path.exists(path):
-    return path
-  else:
-    return checkFilePathIfExists(statement)
-
 def checkIndex(statement):
   index = input(statement)
   if not index:
@@ -107,7 +100,7 @@ def saveTabs():
   main()
 
 def importTabs():
-  filePath = checkFilePathIfExists('Enter the file path to import the tabs: ')
+  filePath = input('Enter the file path to import the tabs: ')
   with open(filePath, 'r') as file:
     Tabs.clear()
     Tabs.extend(json.load(file))
