@@ -7,6 +7,13 @@ def validateChoice(choice):
     main()
     validateChoice(input())
 
+def getValidPath(statement):
+      path = input(statement)
+      if path and path.endswith('.json'):
+        return path
+      else:
+        return getValidPath(statement)
+
 def checkIndex(statement):
   index = input(statement)
   if not index:
