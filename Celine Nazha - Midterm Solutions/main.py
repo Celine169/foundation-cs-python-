@@ -65,7 +65,7 @@ def switchTab():
   else:
     print('There is no tab ')
     main()
-
+# this function prompts the user to enter the index of a tab to display its title and the title otss nested tab if exist
 def displayAllTabs():
     if (len(Tabs) > 0):
       for index, tab in enumerate(Tabs):
