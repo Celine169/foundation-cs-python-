@@ -7,6 +7,15 @@ def validateChoice(choice):
     main()
     validateChoice(input())
 
+def checkIndex(statement):
+  index = input(statement)
+  if not index:
+    return len(Tabs) - 1
+  elif index.isnumeric() and 0 <= int(index) < len(Tabs):
+    return int(index)
+  else:
+    return checkIndex(statement)
+
 
 def openTab():
   title = input('Enter the tab title : ')
