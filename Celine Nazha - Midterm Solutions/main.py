@@ -69,9 +69,11 @@ def openNestedTabs():
         f"Tab '{title}' with URL '{url}' created under the parent tab with index  '{index}' successfully."
     )
     main()
-    
+
 def clearAllTabs():
-  print('all tabs cleared')
+  Tabs.clear()
+  print('All the tabs are cleared!')
+  main()
 
 def saveTabs():
   print('the tabs saved')
