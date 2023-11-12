@@ -11,7 +11,7 @@ def validateChoice(choice):
     print('Please enter a valid choice ')
     main()
     validateChoice(input())
-
+#thisfunction checks if the file path is valid or not
 def getValidPath(statement):
       path = input(statement)
       if path and path.endswith('.json'):
